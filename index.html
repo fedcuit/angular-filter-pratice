@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <script type="text/javascript" charset="utf-8" src="angular.min.js"></script>
+  <script type="text/javascript" charset="utf-8" src="index.js"></script>
+  <style type="text/css" media="screen">
+    .content {
+      width: 960px;
+      margin: 0 auto;
+    }
+    .search {
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body ng-app="FilterDemo">
+  <div class="content" ng-controller="myController">
+    <a href="http://docs.angularjs.org/api/ng.filter:filter">Filter Doc</a>
+    <div class="search"><input id="" type="text" name="" ng-model="search.$"></div>
+    <table border="0" class="table table-bordered table-striped">
+      <tr><th>Event</th><th>Time</th><th>Initiator</th></tr>
+      <tr ng-repeat="event in events | filter: search">
+        <td>{{event.name}}</td>
+        <td>{{event.time}}</td>
+        <td>{{event.initiator}}</td>
+      </tr>
+  </table>
+</div>
+</body>
+</html>
